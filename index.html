@@ -1,197 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mohammed Hasan Ali Khan | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        /* Base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohammed Hasan Ali Khan | Futuristic Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
-            color: #333;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top left, #0f0f0f, #000000);
+      color: #00f0ff;
+      overflow-x: hidden;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
+    header {
+      background: #000000;
+      color: #00f0ff;
+      padding: 60px 0;
+      text-align: center;
+      box-shadow: 0 0 30px #00f0ff;
+      animation: pulseGlow 2s infinite alternate;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+      animation: slideInDown 1.2s ease-out;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            cursor: pointer;
-        }
+    header h2 {
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+      animation: slideInDown 1.5s ease-out;
+    }
 
-        header p {
-            font-size: 1.2em;
-            color: #7f8c8d;
-        }
+    #typing-text {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-top: 15px;
+      animation: fadeIn 2s ease-in;
+    }
 
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 50px auto;
+    }
 
-        ul, ol {
-            padding-left: 20px;
-        }
+    section {
+      background: #111;
+      margin-bottom: 40px;
+      padding: 30px 40px;
+      border-radius: 15px;
+      border: 1px solid #00f0ff;
+      box-shadow: 0 0 20px rgba(0,240,255,0.2);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease-in-out;
+    }
 
-        li {
-            margin-bottom: 8px;
-        }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        a {
-            color: #2980b9;
-            text-decoration: none;
-        }
+    section h2 {
+      color: #00f0ff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #00f0ff;
+      padding-bottom: 5px;
+      animation: slideInLeft 0.8s;
+    }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    section pre, section p {
+      font-size: 16px;
+      color: #ddd;
+      line-height: 1.6;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #7f8c8d;
-        }
+    textarea {
+      width: 100%;
+      height: 100px;
+      border-radius: 8px;
+      border: 2px solid #00f0ff;
+      padding: 10px;
+      font-size: 15px;
+      background: #000;
+      color: #0ff;
+    }
 
-        .toggle-btn {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #3498db;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            float: right;
-        }
+    button {
+      margin-top: 12px;
+      padding: 10px 25px;
+      border: none;
+      background: #00f0ff;
+      color: #000;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
 
-        /* Dark mode */
-        body.dark-mode {
-            background: #1e1e1e;
-            color: #eaeaea;
-        }
+    button:hover {
+      transform: scale(1.08);
+      background: #00d0e6;
+    }
 
-        .dark-mode .container {
-            background-color: #2c2c2c;
-        }
+    footer {
+      background: #0f0f0f;
+      color: #888;
+      text-align: center;
+      padding: 25px 0;
+      box-shadow: inset 0 2px 10px #00f0ff20;
+    }
 
-        .dark-mode h2 {
-            border-color: #f39c12;
-        }
+    a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
 
-        .dark-mode a {
-            color: #f39c12;
-        }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+    @keyframes pulseGlow {
+      from { box-shadow: 0 0 15px #00f0ff; }
+      to { box-shadow: 0 0 30px #00f0ff; }
+    }
 
-            header h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+    @keyframes slideInDown {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h2>Mohammed Hasan Ali Khan</h2>
+    <h1>MY PORTFOLIO</h1>
+    <div id="typing-text"></div>
+  </header>
 
-<div class="container">
-    <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-
-    <header>
-        <h1 onclick="greetUser()">Mohammed Hasan Ali Khan</h1>
-        <p>Engineering Student | Information Technology</p>
-    </header>
-
+  <div class="container">
     <section>
-        <h2>About Me</h2>
-        <p>
-            I am an undergraduate student pursuing Information Technology from Muffakham Jah College of Engineering and Technology.
-            I enjoy solving real-world problems through code and have interests in programming, electronics, and mathematics.
-        </p>
+      <h2>About Me</h2>
+      <p>I am a passionate and detail-oriented Information Technology student at Muffakham Jah College of Engineering and Technology...</p>
     </section>
 
     <section>
-        <h2>Education</h2>
-        <ul>
-            <li>B.E in Information Technology - MJ College (2022–2026)</li>
-            <li>Intermediate - [Your College Name]</li>
-            <li>SSC - [Your School Name]</li>
-        </ul>
+      <h2>Education</h2>
+      <pre>B.E in Information Technology - MJ College (2022–2026)
+Intermediate - Iqbaliya Junior College (2020–2022)
+SSC - KVNHS</pre>
     </section>
 
     <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>C++ Programming</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Java Programming</li>
-            <li>Database Systems</li>
-            <li>HTML & Basic Web Design</li>
-        </ul>
+      <h2>Skills</h2>
+      <pre>C++ Programming
+Data Structures and Algorithms
+Java Programming
+Database Systems
+HTML & Basic Web Design</pre>
     </section>
 
     <section>
-        <h2>Projects</h2>
-        <ol>
-            <li><strong>Simple Calculator in C++</strong><br>
-                A basic calculator that performs arithmetic operations.</li>
-            <li><strong>Student Management System</strong><br>
-                A mini project using file handling in C++.</li>
-        </ol>
+      <h2>Projects</h2>
+      <pre>1) Simple Calculator in C++
+   A basic calculator that performs arithmetic operations.
+
+2) Student Management System
+   A mini project using file handling in C++.</pre>
     </section>
 
     <section>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:mohammedhasanalikhan7@gmail.com">mohammedhasanalikhan7@gmail.com</a></p>
-        <p>Phone: +91-990844617*</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mohammed-hasan-ali-khan-950632290 " target="_blank">linkedin.com/in/yourprofile</a></p>
+      <h2>Contacts</h2>
+      <pre>Email: mohammedhasanalikhan7@gmail.com
+Phone: +91-990844617*
+LinkedIn: <a href="https://www.linkedin.com/in/mohammed-hasan-ali-khan-950632290/?originalSubdomain=in" target="_blank">linkedin.com/in/yourprofile</a></pre>
     </section>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Mohammed Hasan Ali Khan. All rights reserved.</p>
-    </footer>
-</div>
+    <section>
+      <h2>Feedback</h2>
+      <textarea id="feedback" placeholder="Please add your feedback..."></textarea>
+      <button onclick="submitFeedback()">Submit Feedback</button>
+    </section>
+  </div>
 
-<script>
-    // Dark mode toggle
-    function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
+  <footer>
+    <p>&copy; 2025 Mohammed Hasan Ali Khan | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Typing effect
+    const text = "Engineering Student | Information Technology";
+    const typingDiv = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        typingDiv.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeText, 70);
+      }
     }
+    window.onload = typeText;
 
-    // Dynamic year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Scroll animation
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('section').forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add('visible');
+        }
+      });
+    });
 
-    // Optional alert on name click
-    function greetUser() {
-        alert("Welcome to my portfolio! 🚀");
+    // Feedback submission
+    function submitFeedback() {
+      const feedbackText = document.getElementById("feedback").value;
+      if (feedbackText.trim() !== "") {
+        alert("Thank you for your feedback!\n\n" + feedbackText);
+        document.getElementById("feedback").value = "";
+      } else {
+        alert("Please enter feedback before submitting.");
+      }
     }
-</script>
-
+  </script>
 </body>
 </html>
+
